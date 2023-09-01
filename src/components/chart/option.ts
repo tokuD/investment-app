@@ -9,9 +9,13 @@ export const chartOption = (data: {
 }): EChartsOption => {
   const { years, interest, investedCapital, totalInterest, totalSavings } = data
   return {
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     title: {
-      text: 'Stacked Line',
+      text: 'Investment',
+      textStyle: {
+        color: '#000',
+        fontSize: '24px',
+      },
     },
     tooltip: {
       trigger: 'axis',
@@ -26,7 +30,7 @@ export const chartOption = (data: {
     },
     grid: {
       left: '3%',
-      right: '4%',
+      right: '5%',
       bottom: '3%',
       containLabel: true,
     },
@@ -39,9 +43,15 @@ export const chartOption = (data: {
       type: 'category',
       boundaryGap: false,
       data: years,
+      name: 'years',
     },
     yAxis: {
       type: 'value',
+      name: '$',
+      nameTextStyle: {
+        fontWeight: 'bold',
+        color: '#000',
+      },
     },
     color: ['#5470c6', '#91cc75', '#fac858', '#ee6666'],
     series: [
